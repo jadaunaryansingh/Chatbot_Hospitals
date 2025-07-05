@@ -1,0 +1,19 @@
+### Simulated Prescription Paperbooked by Medibot
+
+**Hospital:** CK Birla Hospitals
+**Patient Name:** Arytyan Singh
+**Doctor:** Any available doctor
+**Date of Appointment:** Today
+**Time of Appointment:** 5 PM
+
+---
+**Medication / Notes:**
+__________________________________________________
+__________________________________________________
+__________________________________________________
+__________________________________________________
+
+**Doctor's Signature:** _________________________
+
+*This is a simulated prescription for demonstration purposes only. Consult a real doctor for medical advice.*
+```
