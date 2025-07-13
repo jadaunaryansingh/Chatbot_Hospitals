@@ -4,3 +4,4 @@ requests
 langchain
 openai
 google-generativeai
+gradio
