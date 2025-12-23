@@ -102,14 +102,13 @@ def generate_response(query, hospital_data, history):
     If a user asks to book an appointment, follow these steps for a simulated booking:
     1. First, ask for the preferred hospital name and the patient's full name.
     2. Next, ask for the reason for their visit (e.g., general check-up, specific medical issue, specialist consultation).
-    3. Then, ask if they have a preferred doctor. If they mention a doctor, check if that doctor is in your provided data for that hospital. If not, do not state that you don't have information on that specific doctor but you can proceed with general appointment by stating that i dont have information regarding the specified doctor but if he is available in the hospital .
+    3. Then, ask if they have a preferred doctor. If they mention a doctor, check if that doctor is in your provided data for that hospital. If not, do not state that you don't have information on tha[...]
     4. After that, ask for their preferred date and time for the appointment.
-    5. When all necessary details (hospital name, patient name, reason, preferred doctor (or "any available"), date, and time) have been successfully collected, you MUST do the following in ONE SINGLE RESPONSE:
+    5. When all necessary details (hospital name, patient name, reason, preferred doctor (or "any available"), date, and time) have been successfully collected, you MUST do the following in ONE SINGLE[...]
         a. State: "Appointment booked successfully!"
         b. Summarize the complete booking details clearly.
-        c. Immediately following the summary, generate a simulated pdf , empty prescription paper in the EXACT MARKDOWN FORMAT provided below. Fill in the placeholders [ ] with the gathered information. If a doctor was not specified, use "Any available doctor". For the date on the prescription, use the appointment date you collected and at top mention th hospital name in bold and at top corner write booking with medibot.
+        c. Immediately following the summary, generate a simulated pdf , empty prescription paper in the EXACT MARKDOWN FORMAT provided below. Fill in the placeholders [ ] with the gathered informatio[...]
 
-    ```
     ### Simulated Prescription Paper booked by Medibot
 
     **Hospital:** [Hospital Name]
@@ -128,7 +127,6 @@ def generate_response(query, hospital_data, history):
     **Doctor's Signature:** _________________________
 
     *This is a simulated prescription for demonstration purposes only. Consult a real doctor for medical advice.*
-    ```
     """)
 
     chat_messages = [{"role": "user", "parts": [{"text": prompt}]}]
@@ -154,7 +152,8 @@ textarea, input { border-radius: 8px; padding: 10px; font-size: 16px; }
 .chatbot { border: 2px solid #0077cc; border-radius: 12px; }
 """
 
-chatbot = gr.Chatbot(label="🧠 Chat History", type="messages", elem_classes="chatbot")
+# Removed the unsupported `type="messages"` argument to fix TypeError
+chatbot = gr.Chatbot(label="🧠 Chat History", elem_classes="chatbot")
 msg = gr.Textbox(label="💬 Your Message", placeholder="Type your message here...")
 send_btn = gr.Button("📨 Send")
 clear_btn = gr.Button("🗑️ Clear")
